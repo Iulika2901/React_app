@@ -2,7 +2,6 @@
 
 # Star Wars Random Character Generator
 
-![Star Wars](https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg)
 
 ## Description
 
