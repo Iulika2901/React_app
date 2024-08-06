@@ -2,6 +2,19 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
+class FilmItemRow extends React.Component{
+render(){
+ retrun(
+  <li>
+    <a href={this.props.url}>{this.props.url}</a>
+  </li>
+
+  )
+ }
+}
+
+
 class StarWars extends React.Component {
   constructor() {
     super()
@@ -35,6 +48,12 @@ class StarWars extends React.Component {
   }
 
   render() {
+
+   const movies=this.state.films.map((map,i) => {
+    retrun <FilmItemRow key={i} url={url} />
+   })
+
+
     return (
       <div>
         {
@@ -42,11 +61,11 @@ class StarWars extends React.Component {
            <div>
                  <h1>{this.state.name}</h1>
                   <p>{this.state.height} cm</p>
-                   <p>Homeworld: {this.state.homeworld}</p>
+                   <p><a href={this.state.homeworld}>Homeworld</a></p>
                    <ul>
-                     {this.state.films.map((film, index) => (
-                    <li key={index}>{film}</li>
-                   ))}
+                     {
+                      movies
+                     }
                  </ul>
            </div>
         }
